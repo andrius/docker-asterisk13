@@ -11,11 +11,11 @@ RUN apt-get -yqq update \
       asterisk-core-sounds-en \
       asterisk-core-sounds-en-gsm \
       asterisk-moh-opsound-gsm \
-&&  ln -s /usr/share/asterisk/sounds/en /var/lib/asterisk/sounds/en
+&&  ln -s /usr/share/asterisk/sounds/en /var/lib/asterisk/sounds/en \
 &&  asterisk \
 &&  sleep 5 \
 &&  pkill -9 asterisk \
-&&  apt-get purge procps \
+&&  apt-get -yqq purge procps \
 &&  apt-get clean all \
 &&  rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man* /tmp/* /var/tmp/*
 
